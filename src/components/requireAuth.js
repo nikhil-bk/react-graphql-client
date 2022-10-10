@@ -5,8 +5,8 @@ import { Navigate, useLocation } from 'react-router-dom';
 import CurrentUser from '../queries/CurrentUser';
 
 const functionThatReturnComponent=(Component)=><Component/>
-async function RequireAuth(children) {
-    const { loading, error, data } = await useQuery(CurrentUser);
+ function RequireAuth(children) {
+    const { loading, error, data } = useQuery(CurrentUser);
     const location=useLocation()
 
     console.log(loading, data)
