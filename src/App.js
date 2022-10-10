@@ -26,10 +26,10 @@ function App() {
         <Header />
         <Routes>
           <Route exact path='/' element={<HomePage/>} />
-          <Route path='/login' element={RequireAuth(LoginForm)} />
+          <Route path='/login' element={<LoginForm/>} />
           <Route path='/signup' element={<SignupForm/>} />
           
-          <Route path='/songs' element={RequireAuth(Songs)} />
+          <Route path='/songs' element={<Songs/>} />
           <Route path='/songs/new' element={RequireAuth(SongsCreate)} />
           <Route path='/songs/:id' element={RequireAuth(SongDetails)} />
 
