@@ -22,12 +22,8 @@ function App() {
       </div>
     )
    }
-   const [getUser,{data}] = useLazyQuery(CurrentUser)
-   const location=useLocation()
-   useEffect(() => {
-      getUser()
-      console.log("use-effect")
-   }, [location]);
+   const {data} = useQuery(CurrentUser)
+
    
    
   
