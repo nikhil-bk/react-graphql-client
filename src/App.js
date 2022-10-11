@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
@@ -19,19 +19,23 @@ function App() {
       </div>
     )
    }
+   const { loading, error, data } = useQuery(CurrentUser);
+   const location=useLocation()
+   
   
   return (
     <div className="container">
 
         <Header />
+        {console.log(data)}
         <Routes>
           <Route exact path='/' element={<HomePage/>} />
-          <Route path='/login' element={RequireAuth(LoginForm)} />
+          <Route path='/login' element={data.user?<Songs/>:<LoginForm/>} />
           <Route path='/signup' element={<SignupForm/>} />
           
-          <Route path='/songs' element={RequireAuth(Songs)} />
-          <Route path='/songs/new' element={RequireAuth(SongsCreate)} />
-          <Route path='/songs/:id' element={RequireAuth(SongDetails)} />
+          <Route path='/songs' element={data.user?<Songs/>:<LoginForm/>} />
+          <Route path='/songs/new' element={data.user?<SongsCreate/>:<LoginForm/>} />
+          <Route path='/songs/:id' element={data.user?<SongsCreate/>:<LoginForm/> } />
 
         </Routes>
  
