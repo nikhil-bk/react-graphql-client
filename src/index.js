@@ -9,7 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 const link =createHttpLink({
   uri:process.env.REACT_APP_SERVER,
-  credentials:'include'
+  credentials:'same-origin'
 })
 const client = new ApolloClient({
   link,
