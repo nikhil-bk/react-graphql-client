@@ -9,6 +9,8 @@ import RequireAuth from './components/requireAuth';
 import Songs from './components/Songs';
 import SongsCreate from './components/SongsCreate';
 import SongDetails from './components/SongDetails';
+import { useQuery } from '@apollo/client';
+import CurrentUser from './queries/CurrentUser';
 
 function App() {
    const HomePage=()=>{
