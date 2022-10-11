@@ -32,12 +32,12 @@ function App() {
         {console.log(data)}
         <Routes>
           <Route exact path='/' element={<HomePage/>} />
-          <Route path='/login' element={data.user?<Songs/>:<LoginForm/>} />
+          <Route path='/login' element={data?.user?<Songs/>:<LoginForm/>} />
           <Route path='/signup' element={<SignupForm/>} />
           
-          <Route path='/songs' element={data.user?<Songs/>:<LoginForm/>} />
-          <Route path='/songs/new' element={data.user?<SongsCreate/>:<LoginForm/>} />
-          <Route path='/songs/:id' element={data.user?<SongsCreate/>:<LoginForm/> } />
+          <Route path='/songs' element={data?.user?<Songs/>:<LoginForm/>} />
+          <Route path='/songs/new' element={data?.user?<SongsCreate/>:<LoginForm/>} />
+          <Route path='/songs/:id' element={data?.user?<SongsCreate/>:<LoginForm/> } />
 
         </Routes>
  
