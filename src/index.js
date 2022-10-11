@@ -9,10 +9,14 @@ import { BrowserRouter } from 'react-router-dom';
 
 const link =createHttpLink({
   uri:process.env.REACT_APP_SERVER,
-  credentials:'same-origin'
+  credentials:'include',
+
+
 })
 const client = new ApolloClient({
   link,
+
+
   cache: new InMemoryCache({
     dataIdFromObject(o){
       return o.id
