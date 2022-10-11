@@ -9,8 +9,9 @@ import RequireAuth from './components/requireAuth';
 import Songs from './components/Songs';
 import SongsCreate from './components/SongsCreate';
 import SongDetails from './components/SongDetails';
-import { useQuery } from '@apollo/client';
+import { useLazyQuery, useQuery } from '@apollo/client';
 import CurrentUser from './queries/CurrentUser';
+import { useEffect } from 'react';
 
 function App() {
    const HomePage=()=>{
@@ -21,8 +22,13 @@ function App() {
       </div>
     )
    }
-   const { loading, error, data } = useQuery(CurrentUser);
+   const [getUser,{data}] = useLazyQuery(CurrentUser)
    const location=useLocation()
+   useEffect(() => {
+      getUser()
+      console.log("use-effect")
+   }, [location]);
+   
    
   
   return (
