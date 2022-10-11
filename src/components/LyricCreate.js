@@ -27,9 +27,9 @@ setInputRequireError(true)
     <label>Add a Lyric</label>
     {console.log(data)}
     <input onChange={(event)=>setContent(event.target.value)} value={content}/>
-    {inputRequiredError?<h7 style={{color:'red'}}>Input required*</h7>:<div></div>}
+    {inputRequiredError?<h6 style={{color:'red'}}>Input required*</h6>:<div></div>}
     <br/>
-    <input type="submit"/>{ " "}   {loading && !data?.addLyricToSong?<h7>Adding...</h7>:<div></div>}
+    <input type="submit"/>{ " "}   {loading && !data?.addLyricToSong?<h6>Adding...</h6>:<div></div>}
     
     </form>
     </div>

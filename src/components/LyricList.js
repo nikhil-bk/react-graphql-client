@@ -39,7 +39,7 @@ function LyricList({ lyrics }) {
                                 className='material-icons'>thumb_up</i>
                                 {likes}
                                 <span>
-                                   {loading?<h7>{" "}Saving...</h7>:<div></div>}
+                                   {loading?<h6>{" "}Saving...</h6>:<div></div>}
                                 </span>
                                 
                                 </div>

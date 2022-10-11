@@ -45,10 +45,10 @@ function AuthForm(props) {
                 <div className='errors'>
                     {props?.errors?.errors?.map(error => <div key={error}>{error}</div>)}
                 </div>
-                {inputRequiredError ? <h7 style={{ color: 'red' }}>Email and Password both required*</h7> : <div></div>}
+                {inputRequiredError ? <h6 style={{ color: 'red' }}>Email and Password both required*</h6> : <div></div>}
                 <br />
 
-                <button className='btn'>Submit</button>{" "}{props.loading ? <h7>Logging you in, Please wait....</h7> : <div></div>}
+                <button className='btn'>Submit</button>{" "}{props.loading ? <h6>Logging you in, Please wait....</h6> : <div></div>}
 
             </form>
         </div>

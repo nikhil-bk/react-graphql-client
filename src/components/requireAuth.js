@@ -12,7 +12,10 @@ const functionThatReturnComponent=(Component)=><Component/>
     console.log(loading, data)
 
 
-    return location.pathname==="/login"? !loading && data?.user? <Navigate to ={"/songs"}/>:functionThatReturnComponent(children):  !loading && data?.user?functionThatReturnComponent(children):<Navigate to ={"/login"}/>
+    return functionThatReturnComponent(children)
+
+
+    // return location.pathname==="/login"? !loading && data?.user? <Navigate to ={"/songs"}/>:functionThatReturnComponent(children):  !loading && data?.user?functionThatReturnComponent(children):<Navigate to ={"/login"}/>
 
 
 

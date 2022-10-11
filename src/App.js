@@ -30,8 +30,8 @@ function App() {
           <Route path='/signup' element={<SignupForm/>} />
           
           <Route path='/songs' element={RequireAuth(Songs)} />
-          <Route path='/songs/new' element={(<SongsCreate/>)} />
-          <Route path='/songs/:id' element={<SongDetails/>} />
+          <Route path='/songs/new' element={RequireAuth(SongsCreate)} />
+          <Route path='/songs/:id' element={RequireAuth(SongDetails)} />
 
         </Routes>
  

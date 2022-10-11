@@ -36,9 +36,9 @@ function SongsCreate() {
     <label>Song Title:</label>
     <input onChange={e=>setSongTile(e.target.value)} value={songTitle}/>
     
-    {inputRequiredError?<h7 style={{color:'red'}}>Input required*</h7>:<div></div>}
+    {inputRequiredError?<h6 style={{color:'red'}}>Input required*</h6>:<div></div>}
     <br/>
-    <input type='submit'/>{" "}{loading?<h7>Loading...</h7>:<div></div>}
+    <input type='submit'/>{" "}{loading?<h6>Loading...</h6>:<div></div>}
 
     </form>
     </div>
