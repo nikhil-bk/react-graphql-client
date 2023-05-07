@@ -23,7 +23,8 @@ function LoginForm({user}) {
             awaitRefetchQueries: true
 
         }).then(res => {
-            console.log(res)
+            console.log(res) 
+            useQuery(CurrentUser)
 
         }
         )
@@ -38,7 +39,7 @@ function LoginForm({user}) {
   
     useEffect(() => {
     console.log("current user",user)
-    }, [user])
+    }, [user,loading])
 
 
 
