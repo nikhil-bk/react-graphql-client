@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from '@apollo/client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import LoginMutation from '../mutations/LoginMutation'
 import CurrentUser from '../queries/CurrentUser'
@@ -24,7 +24,7 @@ function LoginForm() {
 
         }).then(res => {
             console.log(res)
-           
+
         }
         )
             .catch(res => {
@@ -35,10 +35,14 @@ function LoginForm() {
 
 
     }
-    if(!loading){
+    if (!loading) {
         navigate('/songs')
     }
-
+    useEffect(() => {
+        if (currentUser?.user) {
+            navigate("/songs")
+        }
+    }, [currentUser])
 
 
 
