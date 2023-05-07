@@ -35,10 +35,9 @@ function LoginForm() {
 
 
     }
-    if (!loading) {
-        navigate('/songs')
-    }
+  
     useEffect(() => {
+        console.log(currentUser)
         if (currentUser?.user) {
             navigate("/songs")
         }
