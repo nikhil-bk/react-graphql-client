@@ -8,7 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 
 const link =createHttpLink({
-  uri:process.env.REACT_APP_SERVER,
+  uri:process.env.REACT_APP_lOCAL_SERVER,
   credentials:'include',
 
 

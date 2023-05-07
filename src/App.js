@@ -12,6 +12,8 @@ import SongDetails from './components/SongDetails';
 import { useLazyQuery, useQuery } from '@apollo/client';
 import CurrentUser from './queries/CurrentUser';
 import { useEffect } from 'react';
+import LyricCreate from './components/LyricCreate';
+import LyricList from './components/LyricList';
 
 function App() {
    const HomePage=()=>{
@@ -39,7 +41,7 @@ function App() {
           
           <Route path='/songs' element={data?.user?<Songs/>:<LoginForm/>} />
           <Route path='/songs/new' element={data?.user?<SongsCreate/>:<LoginForm/>} />
-          <Route path='/songs/:id' element={data?.user?<SongsCreate/>:<LoginForm/> } />
+          <Route path='/songs/:id' element={data?.user?<SongDetails/>:<LoginForm/> } />
 
         </Routes>
  

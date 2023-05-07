@@ -29,7 +29,7 @@ function LyricList({ lyrics }) {
         <div>
 
             <ul className='collection'>
-                {lyrics.map(({ id, content,likes,likers }) => {
+                {lyrics?.map(({ id, content,likes,likers }) => {
                     return (
                         <li key={id} className="collection-item">{content}
                         <div className='vote-box'>
