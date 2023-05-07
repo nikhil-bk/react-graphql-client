@@ -41,9 +41,7 @@ function LoginForm() {
 
 
     return (
-        currentUser?.user?
-       <Navigate to="/songs" replace/>
-        :
+      
 
         <div>
             <h3>Login</h3>

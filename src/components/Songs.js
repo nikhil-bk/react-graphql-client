@@ -34,8 +34,7 @@ function Songs() {
   }
   return (
   
-      currentUser?.user?
-  
+
         loading ? <div>Loading.....</div>
         :
         (
@@ -51,8 +50,7 @@ function Songs() {
         )
         
 
-      :
-      navigate("/login")
+
   
 
   )
