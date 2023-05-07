@@ -8,7 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 
 const link =createHttpLink({
-  uri:process.env.REACT_APP_SERVER_VERCEL,
+  uri:process.env.REACT_APP_SERVER_VERCEL_GRAPHQL,
   credentials:'include',
 
 
