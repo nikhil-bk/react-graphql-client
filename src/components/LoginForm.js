@@ -42,7 +42,7 @@ function LoginForm() {
 
 
         if (currentUser?.user || data?.login?.email) {
-            navigate("/songs")
+           <Navigate to="/songs" replace/>
         }
     }, [loading,currentUser])
 
