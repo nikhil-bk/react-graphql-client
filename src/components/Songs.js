@@ -34,12 +34,12 @@ function Songs() {
   }
   return (
   
-
+      
         loading ? <div>Loading.....</div>
         :
         (
         <div>
-
+       { console.log("this songs page")}
           <ul className='collection'>
             {renderSongs()}
           </ul>
