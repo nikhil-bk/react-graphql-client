@@ -1,6 +1,6 @@
-import { useMutation } from '@apollo/client'
+import { useMutation, useQuery } from '@apollo/client'
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 import LoginMutation from '../mutations/LoginMutation'
 import CurrentUser from '../queries/CurrentUser'
 import AuthForm from './AuthForm'
@@ -9,6 +9,7 @@ function LoginForm() {
     const [login, { data, error, loading }] = useMutation(LoginMutation)
     const [handleErrors, setHandleErrors] = useState({ errors: [] })
     const navigate = useNavigate();
+    const { data: currentUser } = useQuery(CurrentUser)
 
     const onSubmit = ({ email, password }) => {
         console.log(email, password)
@@ -42,11 +43,17 @@ function LoginForm() {
 
 
     return (
+        currentUser?.user?
+       <Navigate to="/songs" replace/>
+        :
+
         <div>
             <h3>Login</h3>
             <AuthForm onSubmit={onSubmit.bind(this)} errors={handleErrors} loading={loading} />
 
         </div>
+
+
     )
 }
 

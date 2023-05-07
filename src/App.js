@@ -31,6 +31,7 @@ function App() {
   
   return (
     <div className="container">
+    {console.log(data)}
 
         <Header />
         {console.log(data)}
@@ -39,9 +40,9 @@ function App() {
           <Route path='/login' element={<LoginForm/>} />
           <Route path='/signup' element={<SignupForm/>} />
           
-          <Route path='/songs' element={data?.user?<Songs/>:<LoginForm/>} />
-          <Route path='/songs/new' element={data?.user?<SongsCreate/>:<LoginForm/>} />
-          <Route path='/songs/:id' element={data?.user?<SongDetails/>:<LoginForm/> } />
+          <Route path='/songs' element={<Songs/>} />
+          <Route path='/songs/new' element={<SongsCreate/>} />
+          <Route path='/songs/:id' element={<SongDetails/> } />
 
         </Routes>
  
