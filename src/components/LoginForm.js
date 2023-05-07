@@ -26,7 +26,7 @@ function LoginForm() {
 
 
 
-        }).then(res =>   <Navigate to="songs" replace />
+        }).then(res =>   <Navigate to="/songs" replace />
         )
             .catch(res => {
                 console.log(res.graphQLErrors)
