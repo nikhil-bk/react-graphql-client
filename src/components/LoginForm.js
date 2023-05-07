@@ -22,13 +22,9 @@ function LoginForm() {
             refetchQueries: [{ query: CurrentUser }],
             awaitRefetchQueries: true
 
-
-
-
-
         }).then(res => {
             console.log(res)
-            navigate("/songs")
+           
         }
         )
             .catch(res => {
@@ -38,6 +34,9 @@ function LoginForm() {
             })
 
 
+    }
+    if(!loading){
+        navigate('/songs')
     }
 
 
