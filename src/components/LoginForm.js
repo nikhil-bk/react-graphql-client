@@ -13,7 +13,7 @@ function LoginForm() {
 
     const onSubmit = ({ email, password }) => {
         console.log(email, password)
-      
+
         login({
             variables: {
                 email,
@@ -26,7 +26,7 @@ function LoginForm() {
 
 
 
-        }).then(res =>  {
+        }).then(res => {
             console.log(res)
             navigate("/songs")
         }
@@ -44,13 +44,14 @@ function LoginForm() {
 
 
     return (
-      
 
-        <div>
-            <h3>Login</h3>
-            <AuthForm onSubmit={onSubmit.bind(this)} errors={handleErrors} loading={loading} />
+        currentUser?.user ?
+            <Navigate to="/songs" replace /> :
+            <div>
+                <h3>Login</h3>
+                <AuthForm onSubmit={onSubmit.bind(this)} errors={handleErrors} loading={loading} />
 
-        </div>
+            </div>
 
 
     )

@@ -38,12 +38,12 @@ function App() {
         {console.log(data)}
         <Routes>
           <Route exact path='/' element={<HomePage/>} />
-          <Route path='/login' element={<ProtectedRoute data={data}><LoginForm/></ProtectedRoute>} />
+          <Route path='/login' element={<LoginForm/>}/>
           <Route path='/signup' element={<SignupForm/>} />
           
-          <Route path='/songs' element={<ProtectedRoute data={data}><Songs/></ProtectedRoute>} />
-          <Route path='/songs/new' element={<ProtectedRoute data={data}><SongsCreate/></ProtectedRoute>} />
-          <Route path='/songs/:id' element={<ProtectedRoute data={data}><SongDetails/></ProtectedRoute> } />
+          <Route path='/songs' element={<ProtectedRoute name="Songs" data={data}><Songs/></ProtectedRoute>} />
+          <Route path='/songs/new' element={<ProtectedRoute name="SongsCreate"data={data}><SongsCreate/></ProtectedRoute>} />
+          <Route path='/songs/:id' element={<ProtectedRoute name="SongDetails"data={data}><SongDetails/></ProtectedRoute> } />
 
         </Routes>
  
