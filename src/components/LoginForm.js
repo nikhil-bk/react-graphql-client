@@ -37,8 +37,8 @@ function LoginForm() {
     }
   
     useEffect(() => {
-        console.log(data)
-        if (currentUser?.user) {
+      
+        if (currentUser?.user || data?.login?.email) {
             navigate("/songs")
         }
     }, [loading])
