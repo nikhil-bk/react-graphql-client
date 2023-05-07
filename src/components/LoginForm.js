@@ -5,11 +5,11 @@ import LoginMutation from '../mutations/LoginMutation'
 import CurrentUser from '../queries/CurrentUser'
 import AuthForm from './AuthForm'
 
-function LoginForm() {
+function LoginForm({user}) {
     const [login, { data, error, loading }] = useMutation(LoginMutation)
     const [handleErrors, setHandleErrors] = useState({ errors: [] })
     const navigate = useNavigate();
-    const { data: currentUser } = useQuery(CurrentUser)
+  
 
     const onSubmit = ({ email, password }) => {
         console.log(email, password)
@@ -37,14 +37,8 @@ function LoginForm() {
     }
   
     useEffect(() => {
-      console.log("currentUser",currentUser)
-      console.log("logindata",data)
-
-
-        if (currentUser?.user || data?.login?.email) {
-           <Navigate to="/songs" replace/>
-        }
-    }, [loading,currentUser])
+    console.log("current user",user)
+    }, [user])
 
 
 

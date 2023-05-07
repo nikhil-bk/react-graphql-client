@@ -38,7 +38,7 @@ function App() {
         {console.log(data)}
         <Routes>
           <Route exact path='/' element={<HomePage/>} />
-          <Route path='/login' element={<LoginForm/>}/>
+          <Route path='/login' element={<LoginForm user={data}/>}/>
           <Route path='/signup' element={<SignupForm/>} />
           
           <Route path='/songs' element={<ProtectedRoute name="Songs" data={data}><Songs/></ProtectedRoute>} />

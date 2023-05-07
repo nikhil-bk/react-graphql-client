@@ -39,7 +39,7 @@ function Songs() {
         :
         (
         <div>
-       { console.log("this songs page")}
+    
           <ul className='collection'>
             {renderSongs()}
           </ul>
