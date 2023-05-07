@@ -14,7 +14,7 @@ function LoginForm() {
     const onSubmit = ({ email, password }) => {
         console.log(email, password)
 
-        login({
+    login({
             variables: {
                 email,
                 password
@@ -37,11 +37,11 @@ function LoginForm() {
     }
   
     useEffect(() => {
-        console.log(currentUser)
+        console.log(data)
         if (currentUser?.user) {
             navigate("/songs")
         }
-    }, [currentUser])
+    }, [loading])
 
 
 
